@@ -21,3 +21,6 @@ print(number + 1) # very easy to perform mathematical operations
 
 # Python variables are case sensitive, cannot start with a number
 # They can't have spaces
+
+#PascalCasing
+#camelCasing
