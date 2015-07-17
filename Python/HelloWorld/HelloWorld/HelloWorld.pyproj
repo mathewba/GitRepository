@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>70b8a9e3-7d43-4768-9bf3-42f1520aa254</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Variables.py</StartupFile>
+    <StartupFile>DateTime.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DateTime.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HelloWorld.py" />
+    <Compile Include="Numbers.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Strings.py">
       <SubType>Code</SubType>
     </Compile>
