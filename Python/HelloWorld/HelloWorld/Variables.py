@@ -24,3 +24,28 @@ print(number + 1) # very easy to perform mathematical operations
 
 #PascalCasing
 #camelCasing
+
+print (name + " loves the number" + " 10")
+
+print ("Hello " + name)
+
+# Manipulation
+print ("\n-----------------------------------------------------------\n")
+message = "Hello Baiju"
+print('\n')
+print(message.upper())
+print('\n')
+print(message.lower())
+print('\n')
+print(message.swapcase())
+
+
+#More manipultion
+
+message = 'Hello World'
+print(message.find('H'))
+
+print(message.count('o'))
+print(message.replace('Hello','HI'))
+
+
