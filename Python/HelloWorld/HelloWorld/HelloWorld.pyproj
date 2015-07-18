@@ -5,13 +5,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>70b8a9e3-7d43-4768-9bf3-42f1520aa254</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DateTime.py</StartupFile>
+    <StartupFile>InputArgs.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>HelloWorld</Name>
     <RootNamespace>HelloWorld</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>InputArgs.py Baiju John Mathew</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HelloWorld.py" />
+    <Compile Include="InputArgs.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Numbers.py">
       <SubType>Code</SubType>
     </Compile>
