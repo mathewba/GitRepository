@@ -13,7 +13,7 @@
     <RootNamespace>InstallLogger</RootNamespace>
     <IsWindowsApplication>False</IsWindowsApplication>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>debug</CommandLineArguments>
+    <CommandLineArguments>INFO "Welcome to Chiri"</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

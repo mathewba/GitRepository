@@ -12,28 +12,37 @@ def main_func():
     numofinputs = len(sys.argv)
 
     # Conditional expressions
-    if numofinputs > 2 : 
+    if numofinputs > 4 : 
         print ("Invalid arguments \nGood BYE")
     else :
+        # Get the input arguments
+        filename = argv.pop(1) # EXE name, File Name, Module Name
+        operation = argv.pop(1) # DEBUG, INFO, WARN, ERROR, CRITICAL, EXCEPTION
+        message = argv.pop(1) # Message to be printed
+
         # setup `logging` module
-        logger = logging.getLogger('test_logging')
-        logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter("[%(asctime)s] %(name)s %(funcName)s():%(lineno)d\t%(message)s")  # same as default
+        logger = logging.getLogger(filename)
+        logger.setLevel(logging.INFO)
+        formatter = logging.Formatter("[%(asctime)s] [%(name)s] : %(message)s")
 
         # setup `RainbowLoggingHandler`
-        handler = RainbowLoggingHandler(sys.stderr, color_funcName=('black', 'black', True))
+        handler = RainbowLoggingHandler(sys.stderr, color_name=('grey', None , True),color_asctime=('green', None  , True))
         handler.setFormatter(formatter)
         logger.addHandler(handler)
 
-        logger.debug("debug msg")
-        logger.info("info msg")
-        logger.warn("warn msg")
-        logger.error("error msg")
-        logger.critical("critical msg")
-
-        try:
-            raise RuntimeError("Aiyo!")
-        except Exception as e:
+        if operation == 'DEBUG' :
+            logger.debug(message)
+        if operation == 'INFO' :
+            logger.info(message)
+        if operation == 'WARN' :
+            logger.warn(message)
+        if operation == 'ERROR' :
+            logger.error(message)
+        if operation == 'CRITICAL' :
+            logger.critical(message)
+        if operation == 'EXCEPTION' :
+            raise RuntimeError("InstallException!")
+            logger.exception(message)
             logger.exception(e)
 
 if __name__ == '__main__':
