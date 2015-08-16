@@ -6,12 +6,15 @@
     <ProjectGuid>bf2d99ae-29b8-47e2-8720-9a7be85321cc</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>InstallLogger.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>C:\Python34</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>InstallLogger</Name>
     <RootNamespace>InstallLogger</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>debug</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +26,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="InstallLogger.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestLogger.bat" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
