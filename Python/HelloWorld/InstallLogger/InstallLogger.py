@@ -1,4 +1,5 @@
-﻿import sys, logging
+﻿import sys, logging, os
+import os.path
 
 from sys import argv
 
@@ -12,22 +13,26 @@ def main_func():
     numofinputs = len(sys.argv)
 
     # Conditional expressions
-    if numofinputs > 4 : 
+    if numofinputs > 5 :
         print ("Invalid arguments \nGood BYE")
     else :
         # Get the input arguments
         filename = argv.pop(1) # EXE name, File Name, Module Name
         operation = argv.pop(1) # DEBUG, INFO, WARN, ERROR, CRITICAL, EXCEPTION
         message = argv.pop(1) # Message to be printed
+        logFile = argv.pop(1) # Log file
 
         # setup `logging` module
         logger = logging.getLogger(filename)
+        fileHandler = logging.FileHandler('Logger.log')
         logger.setLevel(logging.INFO)
         formatter = logging.Formatter("[%(asctime)s] [%(name)s] : %(message)s")
 
         # setup `RainbowLoggingHandler`
         handler = RainbowLoggingHandler(sys.stderr, color_name=('grey', None , True),color_asctime=('green', None  , True))
         handler.setFormatter(formatter)
+        fileHandler.setFormatter(formatter)
+        logger.addHandler(fileHandler)
         logger.addHandler(handler)
 
         if operation == 'DEBUG' :
