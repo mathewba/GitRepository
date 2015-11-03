@@ -7,6 +7,18 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HelloWorld", "HelloWorld\He
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "InstallLogger", "InstallLogger\InstallLogger.pyproj", "{BF2D99AE-29B8-47E2-8720-9A7BE85321CC}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 1", "Problem 1\Problem 1.pyproj", "{E1C7DF4C-3189-4FCF-AAE8-255F58DB4796}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 2", "Problem 2\Problem 2.pyproj", "{45098732-9B4C-49AC-A77A-970D0181F6F9}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 3", "Problem 3\Problem 3.pyproj", "{FA5B6A0F-06F4-471D-9306-29CABC9B5D90}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 4", "Problem 4\Problem 4.pyproj", "{74C70A67-9894-4929-AA84-FB2DE63CAE37}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 5", "Problem 5\Problem 5.pyproj", "{9A7319E1-3EDC-42D9-B729-99CECA4BF6D2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Problem 6", "Problem 6\Problem 6.pyproj", "{A116CB02-E920-4627-B736-ECBDA1F2D3AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +29,18 @@ Global
 		{70B8A9E3-7D43-4768-9BF3-42F1520AA254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2D99AE-29B8-47E2-8720-9A7BE85321CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BF2D99AE-29B8-47E2-8720-9A7BE85321CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C7DF4C-3189-4FCF-AAE8-255F58DB4796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C7DF4C-3189-4FCF-AAE8-255F58DB4796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45098732-9B4C-49AC-A77A-970D0181F6F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45098732-9B4C-49AC-A77A-970D0181F6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5B6A0F-06F4-471D-9306-29CABC9B5D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5B6A0F-06F4-471D-9306-29CABC9B5D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C70A67-9894-4929-AA84-FB2DE63CAE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C70A67-9894-4929-AA84-FB2DE63CAE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7319E1-3EDC-42D9-B729-99CECA4BF6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7319E1-3EDC-42D9-B729-99CECA4BF6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A116CB02-E920-4627-B736-ECBDA1F2D3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A116CB02-E920-4627-B736-ECBDA1F2D3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
