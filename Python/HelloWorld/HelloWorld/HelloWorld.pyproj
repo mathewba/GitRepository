@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>70b8a9e3-7d43-4768-9bf3-42f1520aa254</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Files.py</StartupFile>
+    <StartupFile>Functions.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Files.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Functions.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HelloWorld.py" />
