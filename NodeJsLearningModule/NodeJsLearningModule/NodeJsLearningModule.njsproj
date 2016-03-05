@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="StdInOut.js" />
+    <Compile Include="Timer.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
