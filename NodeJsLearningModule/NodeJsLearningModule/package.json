@@ -1,0 +1,10 @@
+{
+  "name": "NodeJsLearningModule",
+  "version": "0.0.0",
+  "description": "NodeJsLearningModule",
+  "main": "app.js",
+  "author": {
+    "name": "mathewba",
+    "email": ""
+  }
+}
