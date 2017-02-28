@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+﻿#!/usr/bin/python3
 # csv_tables.py by Barron Stone
 # This is an exercise file from Python Code Clinic on lynda.com
 
