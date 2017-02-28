@@ -15,17 +15,17 @@ namespace IconiumUtils
    
     public class Utils
     {
-        public static string GTabName = "";
-        public static string GPanelName = "";
-        public static int RowIndex = 2;
+        public static string GTabName = ""; // Tab Name
+        public static string GPanelName = ""; // Panel Name
+        public static int RowIndex = 2; // To update the nummber of rows
 
         public static Microsoft.Office.Interop.Excel._Application app;
         public static Microsoft.Office.Interop.Excel._Workbook workbook;
         public static Microsoft.Office.Interop.Excel._Worksheet worksheet;
 
-        const string inputXML = @"C:\\RibbonRoot.xml";
-        const string MenuXML = @"C:\\MenuGroup.xml";
-        const string ResourceXML = @"C:\\Resources.xml";
+        const string inputXML = @"C:\\RibbonRoot.xml"; // RibbinRoot.cui
+        const string MenuXML = @"C:\\MenuGroup.xml"; // MenuGroup.cui combined for ACA and MEP
+        const string ResourceXML = @"C:\\Resources.xml"; // Resource XML file with Resource.h entries mapped to Resource IDs
 
         
         public static void LoadCUI(string inputFile)
