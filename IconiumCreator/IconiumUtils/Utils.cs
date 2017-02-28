@@ -86,7 +86,7 @@ namespace IconiumUtils
                 try
                 {
                     string Text = node.Attributes.GetNamedItem("Text").Value;
-                    Console.WriteLine("TabName = " + Text);
+                    // Console.WriteLine("TabName = " + Text);
                     WriteLog("Name = " + Text);
                     GTabName = Text;
                     
@@ -115,7 +115,7 @@ namespace IconiumUtils
                                 WriteLog("PanelId = " + PanelId);
                                 string PanelName = FindPanelName(PanelId);
                                 
-                                Console.WriteLine("PanelName = " + PanelName);
+                                // Console.WriteLine("PanelName = " + PanelName);
                                 WriteLog("PanelName = " + PanelName);
                                 GPanelName = PanelName;
                                 string commandButton = FindFindButton(PanelId);
@@ -235,7 +235,7 @@ namespace IconiumUtils
                 ExportToExcel(MyText, 3);
                 LoadMenuXML(MenuMacroID);
                 // string PanelName = FindPanelName(PanelId);
-                Console.WriteLine("Button Name = " + MyText);
+                // Console.WriteLine("Button Name = " + MyText);
                 WriteLog("Button Name = " + MyText);
                 //ExportToExcel(MyText, 3);                
                 return MenuMacroID;
@@ -291,8 +291,8 @@ namespace IconiumUtils
                     WriteLog("HelpString = " + HelpString);
                    
 
-                    Console.WriteLine("ResourceID = " + ResourceID);
-                    Console.WriteLine("HelpString = " + HelpString);
+                    // Console.WriteLine("ResourceID = " + ResourceID);
+                    // Console.WriteLine("HelpString = " + HelpString);
                     ExportToExcel(HelpString, 4);
                     LoadResourceXML(ResourceID);
 
@@ -307,9 +307,9 @@ namespace IconiumUtils
                     string ResourceID = "NA";
                     string HelpString = "NA";
 
-                    Console.WriteLine("ResourceID = " + ResourceID);
+                    // Console.WriteLine("ResourceID = " + ResourceID);
                     //ExportToExcel(HelpString, 5);
-                    Console.WriteLine("HelpString = " + HelpString);
+                    // Console.WriteLine("HelpString = " + HelpString);
                     
                     ExportToExcel(HelpString, 4);
                     LoadResourceXML(ResourceID);
@@ -349,7 +349,7 @@ namespace IconiumUtils
                     WriteLog("IconName = " + iconName);
                     WriteLog("IconType = " + iconType);                  
 
-                    Console.WriteLine("IconName = " + iconName);
+                    // Console.WriteLine("IconName = " + iconName);
                     ExportToExcel(iconName, 5);
                     ExportToExcel(iconType, 6);
                     break;
