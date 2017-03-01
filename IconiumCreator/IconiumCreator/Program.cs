@@ -23,7 +23,9 @@ namespace IconiumCreator
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                // Console.WriteLine(Ex.Message);
+                IconiumUtils.Utils.WriteLog(Ex.Message);
+
             }
 
 

@@ -87,13 +87,13 @@ namespace IconiumUtils
                 {
                     string Text = node.Attributes.GetNamedItem("Text").Value;
                     // Console.WriteLine("TabName = " + Text);
-                    WriteLog("Name = " + Text);
+                    // WriteLog("Name = " + Text);
                     GTabName = Text;
                     
 
                     string Innertext = tempNode.InnerText;
                     // Console.WriteLine("Innertext = " + Innertext);
-                    WriteLog("Innertext = " + Innertext);
+                    // WriteLog("Innertext = " + Innertext);
 
 
                     int count = node.ChildNodes.Count;
@@ -112,11 +112,11 @@ namespace IconiumUtils
                             if (!string.IsNullOrEmpty(PanelId))
                             {
                                 // Console.WriteLine("PanelId = " + PanelId);
-                                WriteLog("PanelId = " + PanelId);
+                                // WriteLog("PanelId = " + PanelId);
                                 string PanelName = FindPanelName(PanelId);
                                 
                                 // Console.WriteLine("PanelName = " + PanelName);
-                                WriteLog("PanelName = " + PanelName);
+                                // WriteLog("PanelName = " + PanelName);
                                 GPanelName = PanelName;
                                 string commandButton = FindFindButton(PanelId);
 
@@ -135,7 +135,8 @@ namespace IconiumUtils
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    // Console.WriteLine(ex.Message);
+                    WriteLog(ex.Message);
                 }
 
                 if (tempNode != null)
@@ -231,12 +232,12 @@ namespace IconiumUtils
                 string MyText = parentnode.Attributes.GetNamedItem("Text").Value;
 
                 // Console.WriteLine("MenuMacroID = " + MenuMacroID);
-                WriteLog("MenuMacroID = " + MenuMacroID);
+                // WriteLog("MenuMacroID = " + MenuMacroID);
                 ExportToExcel(MyText, 3);
                 LoadMenuXML(MenuMacroID);
                 // string PanelName = FindPanelName(PanelId);
                 // Console.WriteLine("Button Name = " + MyText);
-                WriteLog("Button Name = " + MyText);
+                // WriteLog("Button Name = " + MyText);
                 //ExportToExcel(MyText, 3);                
                 return MenuMacroID;
 
@@ -287,8 +288,8 @@ namespace IconiumUtils
                     XmlNode HelpStringNode = macroNode.ChildNodes.Item(4);
                     string HelpString = HelpStringNode.InnerText;
 
-                    WriteLog("ResourceID = " + ResourceID);
-                    WriteLog("HelpString = " + HelpString);
+                    // WriteLog("ResourceID = " + ResourceID);
+                    // WriteLog("HelpString = " + HelpString);
                    
 
                     // Console.WriteLine("ResourceID = " + ResourceID);
@@ -346,8 +347,8 @@ namespace IconiumUtils
                     XmlNode IconType = node.ChildNodes.Item(2);
                     string iconType = IconType.InnerText;
 
-                    WriteLog("IconName = " + iconName);
-                    WriteLog("IconType = " + iconType);                  
+                    // WriteLog("IconName = " + iconName);
+                    // WriteLog("IconType = " + iconType);                  
 
                     // Console.WriteLine("IconName = " + iconName);
                     ExportToExcel(iconName, 5);
