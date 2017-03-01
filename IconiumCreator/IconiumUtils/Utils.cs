@@ -18,6 +18,10 @@ namespace IconiumUtils
         public static string GTabName = ""; // Tab Name
         public static string GPanelName = ""; // Panel Name
         public static int RowIndex = 2; // To update the nummber of rows
+        public static string GButtonName = "";
+        public static string GButtonDescription = "";
+        public static string GIconName = "";
+
 
         public static Microsoft.Office.Interop.Excel._Application app;
         public static Microsoft.Office.Interop.Excel._Workbook workbook;
@@ -95,8 +99,6 @@ namespace IconiumUtils
                     // Console.WriteLine("Innertext = " + Innertext);
                     // WriteLog("Innertext = " + Innertext);
 
-
-                    int count = node.ChildNodes.Count;
 
                     XmlNodeList Panelnodes = node.ChildNodes;
 
@@ -233,7 +235,8 @@ namespace IconiumUtils
 
                 // Console.WriteLine("MenuMacroID = " + MenuMacroID);
                 // WriteLog("MenuMacroID = " + MenuMacroID);
-                ExportToExcel(MyText, 3);
+                // ExportToExcel(MyText, 3);
+                GButtonName = MyText;
                 LoadMenuXML(MenuMacroID);
                 // string PanelName = FindPanelName(PanelId);
                 // Console.WriteLine("Button Name = " + MyText);
@@ -290,11 +293,13 @@ namespace IconiumUtils
 
                     // WriteLog("ResourceID = " + ResourceID);
                     // WriteLog("HelpString = " + HelpString);
-                   
+
 
                     // Console.WriteLine("ResourceID = " + ResourceID);
                     // Console.WriteLine("HelpString = " + HelpString);
-                    ExportToExcel(HelpString, 4);
+                    // ExportToExcel(HelpString, 4);
+                    GButtonDescription = HelpString;
+
                     LoadResourceXML(ResourceID);
 
                 }
@@ -311,8 +316,9 @@ namespace IconiumUtils
                     // Console.WriteLine("ResourceID = " + ResourceID);
                     //ExportToExcel(HelpString, 5);
                     // Console.WriteLine("HelpString = " + HelpString);
-                    
-                    ExportToExcel(HelpString, 4);
+
+                    // ExportToExcel(HelpString, 4);
+                    GButtonDescription = HelpString;
                     LoadResourceXML(ResourceID);
 
                 }
@@ -351,7 +357,9 @@ namespace IconiumUtils
                     // WriteLog("IconType = " + iconType);                  
 
                     // Console.WriteLine("IconName = " + iconName);
-                    ExportToExcel(iconName, 5);
+                    // ExportToExcel(iconName, 5);
+
+                    GIconName = iconName; 
                     ExportToExcel(iconType, 6);
                     break;
 
@@ -401,6 +409,9 @@ namespace IconiumUtils
            
             worksheet.Cells[RowIndex, 1] = GTabName;
             worksheet.Cells[RowIndex, 2] = GPanelName;
+            worksheet.Cells[RowIndex, 3] = GButtonName;
+            worksheet.Cells[RowIndex, 4] = GButtonDescription;
+            worksheet.Cells[RowIndex, 5] = GIconName;
             worksheet.Cells[RowIndex, columnIndex] = inputValue;
             if (columnIndex == 6) //6 is the index for last column that is Icon Type
             {
