@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace IconiumUtils
 {
-   
+
     public class Utils
     {
         public static string GTabName = ""; // Tab Name
@@ -69,7 +69,7 @@ namespace IconiumUtils
             worksheet = workbook.Sheets["sheet1"];
 
             worksheet = workbook.ActiveSheet;
-           
+
             // changing the column name of active sheet 
 
             worksheet.Name = "MEP Icons Data";
@@ -80,6 +80,8 @@ namespace IconiumUtils
             worksheet.Cells[1, 5] = "Button Description";
             worksheet.Cells[1, 6] = "Icon Name";
             worksheet.Cells[1, 7] = "Icon Type";
+
+            // AddMenuBorder(1, 7);
 
 
             XmlNodeList nodes = xmlDoc.GetElementsByTagName("RibbonTabSource");
@@ -98,7 +100,7 @@ namespace IconiumUtils
                     // WriteLog("Name = " + Text);
                     GTabName = Text;
                     GTabID = TABID;
-                    
+
 
                     string Innertext = tempNode.InnerText;
                     // Console.WriteLine("Innertext = " + Innertext);
@@ -121,7 +123,7 @@ namespace IconiumUtils
                                 // Console.WriteLine("PanelId = " + PanelId);
                                 // WriteLog("PanelId = " + PanelId);
                                 string PanelName = FindPanelName(PanelId);
-                                
+
                                 // Console.WriteLine("PanelName = " + PanelName);
                                 // WriteLog("PanelName = " + PanelName);
                                 GPanelName = PanelName;
@@ -202,7 +204,7 @@ namespace IconiumUtils
                 {
                     foreach (XmlNode childnode in PanelSourceNode.ChildNodes)
                     {
-                        string MenuMacroID  = FindRibbonRow(childnode);
+                        string MenuMacroID = FindRibbonRow(childnode);
 
                         // Find the Resource ID based on the Menu Macro ID
                         // LoadMenuXML(MenuMacroID);
@@ -241,7 +243,10 @@ namespace IconiumUtils
                 // Console.WriteLine("MenuMacroID = " + MenuMacroID);
                 // WriteLog("MenuMacroID = " + MenuMacroID);
                 // ExportToExcel(MyText, 3);
-                GButtonName = MyText;
+
+                if (MyText != "" || MyText != string.Empty)
+                    GButtonName = MyText;
+
                 LoadMenuXML(MenuMacroID);
                 // string PanelName = FindPanelName(PanelId);
                 // Console.WriteLine("Button Name = " + MyText);
@@ -364,7 +369,7 @@ namespace IconiumUtils
                     // Console.WriteLine("IconName = " + iconName);
                     // ExportToExcel(iconName, 5);
 
-                    GIconName = iconName; 
+                    GIconName = iconName;
                     ExportToExcel(iconType, 7);
                     break;
 
@@ -411,14 +416,21 @@ namespace IconiumUtils
 
         public static void ExportToExcel(string inputValue, int columnIndex)
         {
-           
+
             worksheet.Cells[RowIndex, 1] = GTabName;
+            AddBorder(RowIndex, 1);
             worksheet.Cells[RowIndex, 2] = GTabID;
+            AddBorder(RowIndex, 2);
             worksheet.Cells[RowIndex, 3] = GPanelName;
+            AddBorder(RowIndex, 3);
             worksheet.Cells[RowIndex, 4] = GButtonName;
+            AddBorder(RowIndex, 4);
             worksheet.Cells[RowIndex, 5] = GButtonDescription;
+            AddBorder(RowIndex, 5);
             worksheet.Cells[RowIndex, 6] = GIconName;
+            AddBorder(RowIndex, 6);
             worksheet.Cells[RowIndex, columnIndex] = inputValue;
+            AddBorder(RowIndex, columnIndex);
             if (columnIndex == 7) //6 is the index for last column that is Icon Type
             {
                 RowIndex++;
@@ -428,7 +440,28 @@ namespace IconiumUtils
 
         }
 
+        public static void AddBorder(int Row, int Column)
+        {
+            Microsoft.Office.Interop.Excel.Range range = worksheet.UsedRange;
+            Microsoft.Office.Interop.Excel.Range cell = range.Cells[Row, Column];
+            Microsoft.Office.Interop.Excel.Borders border = cell.Borders;
 
+            border.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            border.Weight = 2d;
+
+        }
+
+        public static void AddMenuBorder(int Row, int Column)
+        {
+            Microsoft.Office.Interop.Excel.Range range = worksheet.Cells[Row, Column];
+            Microsoft.Office.Interop.Excel.Range cell = range.Cells[Row, Column];
+            Microsoft.Office.Interop.Excel.Borders border = cell.Borders;
+
+            border.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+            border.Weight = 5d;
+
+
+        }
     }
 
 
