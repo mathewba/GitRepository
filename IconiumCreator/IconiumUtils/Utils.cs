@@ -21,6 +21,7 @@ namespace IconiumUtils
         public static string GButtonName = "";
         public static string GButtonDescription = "";
         public static string GIconName = "";
+        public static string GTabID = "";
 
 
         public static Microsoft.Office.Interop.Excel._Application app;
@@ -30,12 +31,12 @@ namespace IconiumUtils
         const string inputXML = @"C:\\RibbonRoot.xml"; // RibbinRoot.cui
         const string MenuXML = @"C:\\MenuGroup.xml"; // MenuGroup.cui combined for ACA and MEP
         const string ResourceXML = @"C:\\Resources.xml"; // Resource XML file with Resource.h entries mapped to Resource IDs
+        const string WorkspaceXML = @"C:\\WorkspaceRoot.xml";
 
-        
+
         public static void LoadCUI(string inputFile)
 
         {
-
 
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(inputFile);
@@ -68,15 +69,17 @@ namespace IconiumUtils
             worksheet = workbook.Sheets["sheet1"];
 
             worksheet = workbook.ActiveSheet;
+           
             // changing the column name of active sheet 
 
             worksheet.Name = "MEP Icons Data";
             worksheet.Cells[1, 1] = "Tab Name";
-            worksheet.Cells[1, 2] = "Panel Name";
-            worksheet.Cells[1, 3] = "Button Name";
-            worksheet.Cells[1, 4] = "Button Description";
-            worksheet.Cells[1, 5] = "Icon Name";
-            worksheet.Cells[1, 6] = "Icon Type";
+            worksheet.Cells[1, 2] = "Tab ID";
+            worksheet.Cells[1, 3] = "Panel Name";
+            worksheet.Cells[1, 4] = "Button Name";
+            worksheet.Cells[1, 5] = "Button Description";
+            worksheet.Cells[1, 6] = "Icon Name";
+            worksheet.Cells[1, 7] = "Icon Type";
 
 
             XmlNodeList nodes = xmlDoc.GetElementsByTagName("RibbonTabSource");
@@ -90,9 +93,11 @@ namespace IconiumUtils
                 try
                 {
                     string Text = node.Attributes.GetNamedItem("Text").Value;
+                    string TABID = node.Attributes.GetNamedItem("UID").Value;
                     // Console.WriteLine("TabName = " + Text);
                     // WriteLog("Name = " + Text);
                     GTabName = Text;
+                    GTabID = TABID;
                     
 
                     string Innertext = tempNode.InnerText;
@@ -360,7 +365,7 @@ namespace IconiumUtils
                     // ExportToExcel(iconName, 5);
 
                     GIconName = iconName; 
-                    ExportToExcel(iconType, 6);
+                    ExportToExcel(iconType, 7);
                     break;
 
                 }
@@ -408,12 +413,13 @@ namespace IconiumUtils
         {
            
             worksheet.Cells[RowIndex, 1] = GTabName;
-            worksheet.Cells[RowIndex, 2] = GPanelName;
-            worksheet.Cells[RowIndex, 3] = GButtonName;
-            worksheet.Cells[RowIndex, 4] = GButtonDescription;
-            worksheet.Cells[RowIndex, 5] = GIconName;
+            worksheet.Cells[RowIndex, 2] = GTabID;
+            worksheet.Cells[RowIndex, 3] = GPanelName;
+            worksheet.Cells[RowIndex, 4] = GButtonName;
+            worksheet.Cells[RowIndex, 5] = GButtonDescription;
+            worksheet.Cells[RowIndex, 6] = GIconName;
             worksheet.Cells[RowIndex, columnIndex] = inputValue;
-            if (columnIndex == 6) //6 is the index for last column that is Icon Type
+            if (columnIndex == 7) //6 is the index for last column that is Icon Type
             {
                 RowIndex++;
 
